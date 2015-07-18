@@ -35,11 +35,13 @@
     ]
   },
   "devDependencies": {
-    "linelint": "0.0.3",
-    "lintspaces-cli": "0.0.4",
-    "mocha": "1.21.4",
+    "browserify": "5.12.0",
+    "cli-table": "^0.3.1",
     "jshint": "2.5.5",
-    "browserify": "5.12.0"
+    "linelint": "1.0.0",
+    "lintspaces-cli": "0.1.0",
+    "mocha": "1.21.4",
+    "uglifyjs": "^2.4.10"
   },
   "directories": {
     "test": "./test"
