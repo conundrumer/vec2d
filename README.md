@@ -57,57 +57,54 @@ Just include a script tag as you'd expect:
 Performance can be gauged by running the command below. This currently only operates in a node environment so you need to run it from a terminal.
 
 ```bash
-Evan@Evans-MacBook-Pro:~/vec2d$ make performance
+vec2d (master) $ make performance
 node --expose-gc ./performance/index.js
 Tests are averaged from 5 passes/runs on a set of 100000 vectors. Please wait...
 
-Float32Vector:
-"generate (e.g new Float32Vector)", 936ms
-"add", 38ms
-"subtract", 36.8ms
-"round", 6ms
-"abs", 6.2ms
-"magnitude", 3.8ms
-"clone", 883.2ms
-"zero", 3ms
-"reverse", 6.8ms
-"toString", 8.4ms
-"multiplyByScalar", 6.6ms
-"normalise", 11.4ms
-"divS", 7ms
-"lengthSq", 4.8ms
+ArrayVector
+84.19999999999999ms
 
-ArrayVector:
-"generate (e.g new Vector)", 34ms
-"add", 39.8ms
-"subtract", 36.4ms
-"round", 4.6ms
-"abs", 4.2ms
-"magnitude", 2ms
-"clone", 6.2ms
-"zero", 1.6ms
-"reverse", 4.4ms
-"toString", 14ms
-"multiplyByScalar", 5.8ms
-"normalise", 9ms
-"divS", 6.4ms
-"lengthSq", 4.2ms
+ObjectVector
+59.4ms
 
-ObjectVector:
-"generate (e.g new ObjectVector)", 10ms
-"add", 24.2ms
-"subtract", 23.6ms
-"round", 7ms
-"abs", 6.6ms
-"magnitude", 3.2ms
-"clone", 6.8ms
-"zero", 3.6ms
-"reverse", 5.4ms
-"toString", 27.6ms
-"multiplyByScalar", 7ms
-"normalise", 10.4ms
-"divS", 8.4ms
-"lengthSq", 4ms
+Float32Vector
+140.99999999999997ms
+
+Float64Vector
+133.2ms
+┌──────────────────┬─────────────┬──────────────┬───────────────┬───────────────┐
+│ time in ms       │ ArrayVector │ ObjectVector │ Float32Vector │ Float64Vector │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ new              │ 24          │ 8            │ 34            │ 33            │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ add              │ 12          │ 8            │ 17.4          │ 17            │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ subtract         │ 14          │ 10.8         │ 25.2          │ 28.2          │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ round            │ 2.4         │ 2.4          │ 2.8           │ 2.8           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ abs              │ 1.6         │ 1.8          │ 2.2           │ 2.8           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ magnitude        │ 1.2         │ 1.2          │ 1.6           │ 1.8           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ clone            │ 10.2        │ 5.4          │ 25.4          │ 22.4          │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ zero             │ 1.6         │ 1.2          │ 2             │ 1.6           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ reverse          │ 1.6         │ 1.6          │ 3.8           │ 2.2           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ toString         │ 5           │ 4.6          │ 6.2           │ 4.6           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ multiplyByScalar │ 2.8         │ 2.8          │ 5.6           │ 3.2           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ normalise        │ 2.8         │ 4.4          │ 6.2           │ 6             │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ divS             │ 2.6         │ 4.8          │ 5             │ 4.4           │
+├──────────────────┼─────────────┼──────────────┼───────────────┼───────────────┤
+│ lengthSq         │ 2.4         │ 2.4          │ 3.6           │ 3.2           │
+└──────────────────┴─────────────┴──────────────┴───────────────┴───────────────┘
+vec2d (master) $ node -v
+v0.12.6
 ```
 
 ## Library Function Structure
