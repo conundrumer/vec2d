@@ -17,6 +17,7 @@ function equal(a, b, digits) {
 run(Vec2D.ArrayVector);
 run(Vec2D.Float32Vector);
 run(Vec2D.ObjectVector);
+run(Vec2D.Float64Vector);
 
 function run (ctor) {
 
