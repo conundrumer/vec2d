@@ -706,7 +706,28 @@ Float32Vector.prototype.ctor = Float32Vector;
 
 module.exports = Float32Vector;
 
-},{"./Vector.js":8,"util":4}],6:[function(require,module,exports){
+},{"./Vector.js":9,"util":4}],6:[function(require,module,exports){
+'use strict';
+
+var util = require('util')
+  , Vector = require('./Vector.js');
+
+function Float64Vector(x, y) {
+  if (this instanceof Float64Vector === false) {
+    return new Float64Vector(x, y);
+  }
+
+  this._axes = new Float64Array(2);
+  this._axes[0] = x;
+  this._axes[1] = y;
+}
+util.inherits(Float64Vector, Vector);
+
+Float64Vector.prototype.ctor = Float64Vector;
+
+module.exports = Float64Vector;
+
+},{"./Vector.js":9,"util":4}],7:[function(require,module,exports){
 'use strict';
 
 var util = require('util')
@@ -744,20 +765,24 @@ ObjectVector.prototype.ctor = ObjectVector;
 
 module.exports = ObjectVector;
 
-},{"./Vector.js":8,"util":4}],7:[function(require,module,exports){
+},{"./Vector.js":9,"util":4}],8:[function(require,module,exports){
 'use strict';
 
 var Vector = require('./Vector.js')
+  , Float64Vector = require('./Float64Vector.js')
   , Float32Vector = require('./Float32Vector.js')
   , ObjectVector = require('./ObjectVector.js');
 
 module.exports = {
   ArrayVector: Vector,
   ObjectVector: ObjectVector,
+  Float64Vector: Float64Vector,
   Float32Vector: Float32Vector
+
+  // TODO: Add instance methods in the future
 };
 
-},{"./Float32Vector.js":5,"./ObjectVector.js":6,"./Vector.js":8}],8:[function(require,module,exports){
+},{"./Float32Vector.js":5,"./Float64Vector.js":6,"./ObjectVector.js":7,"./Vector.js":9}],9:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1154,5 +1179,5 @@ Object.defineProperty(Vector.prototype, 'y', {
   }
 });
 
-},{}]},{},[7])(7)
+},{}]},{},[8])(8)
 });
