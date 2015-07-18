@@ -18,10 +18,11 @@ As of version 2.0.0 all methods on the Vec2D object have been removed, only the 
 ## About
 An easy to use 2D Vector library with 3 methods of Vector representation to allow you to squeeze out as much performance as possible.
 
-Vec2D provides 3 main modes of Vector representations (classes):
+Vec2D provides 4 main modes of Vector representations (classes):
 
 * ArrayVector
 * Float32Vector
+* Float64Vector
 * ObjectVector
 
 Regardless of class used all library functions can be used in the same manner and developers will not need to worry about the vector representation. You should also be able to mix vector types as the interface and base class used is consistent across the types with only the underlying data structure used to store the axes being modified.
