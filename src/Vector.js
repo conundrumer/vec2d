@@ -33,6 +33,17 @@ Vector.prototype = {
   ctor: Vector,
 
   /**
+   * Set this vector to the provided vector.
+   * @param {Vector} vec
+   */
+  set: function(vec) {
+    this.x = vec.x;
+    this.y = vec.y;
+    return this;
+  },
+
+
+  /**
    * Set both x and y
    * @param x   New x val
    * @param y   New y val
