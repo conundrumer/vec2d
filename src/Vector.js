@@ -360,6 +360,63 @@ Vector.prototype = {
 
 
   /**
+   * Rotate the vector left by 90 degrees (where y is down).
+   * @return  {Vector}
+   */
+  rotateLeft: function() {
+    var ox = this.x,
+      oy = this.y;
+
+    this.x = oy;
+    this.y = -ox;
+
+    return this;
+  },
+
+
+  /**
+   * Rotate the vector right by 90 degrees (where y is down).
+   * @return  {Vector}
+   */
+  rotateRight: function() {
+    var ox = this.x,
+      oy = this.y;
+
+    this.x = -oy;
+    this.y = ox;
+
+    return this;
+  },
+
+
+  /**
+   * Swaps the x and y Axes
+   * @return {Vector}
+   */
+  permutate: function() {
+    var ox = this.x,
+      oy = this.y;
+
+    this.x = oy;
+    this.y = ox;
+
+    return this;
+  },
+
+
+  /**
+   * Linearly interpolates the vector to vec by t amount
+   * @param  {Vector} vec
+   * @param  {Number} t
+   * @return {Vector}
+   */
+  lerp: function(vec, t) {
+    this.x = (1 - t) * this.x + t * vec.x;
+    this.y = (1 - t) * this.y + t * vec.y;
+  },
+
+
+  /**
    * Round this vector to n decimal places
    * @param {Number}  n
    */
