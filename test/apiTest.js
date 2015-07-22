@@ -53,8 +53,8 @@ function run (ctor) {
         assert(v1.getX() === 10);
 
         // Just y
-        v1.setX(47);
-        assert(v1.getX() === 47);
+        v1.setY(47);
+        assert(v1.getY() === 47);
       });
     });
 
