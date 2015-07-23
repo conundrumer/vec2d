@@ -341,6 +341,18 @@ Vector.prototype = {
 
 
   /**
+   * Distance squared between this vector and another.
+   * @param {Vector} v
+   */
+  distanceSq: function (v) {
+    var x = this.x - v.x;
+    var y = this.y - v.y;
+
+    return (x * x) + (y * y);
+  },
+
+
+  /**
    * Rotate the vetor by provided radians.
    * @param   {Number}  rads
    * @return  {Vector}
