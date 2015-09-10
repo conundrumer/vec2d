@@ -453,6 +453,13 @@ Vector.prototype = {
    */
   clone: function() {
     return new this.ctor(this.x, this.y);
+  },
+
+  toJSON: function() {
+    return {
+      x: this.x,
+      y: this.y
+    }
   }
 };
 
